@@ -1,0 +1,156 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}"
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Home</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">ATTENDANCE PORTAL</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/attendance">Student Attendance</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Csv Files
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/uploadcsv">Upload Csv</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/attendance-csv">Download Csv</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/handleLogout">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    {% for message in messages %}
+        <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+            <strong></strong> {{message}} 
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    {% endfor %}
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{% static 'image/hog.jpg' %}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'image/star.jpg' %}" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="{% static 'image/wow.jpg' %}" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    <div class="container mt-4">
+        <div class="row row-cols-1 row-cols-md-2">
+            <div class="row no-gutters">
+                <div class="col-md-4 mt-3">
+                    <img src="/static/image/pr.jpg" class="card-img" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Carl Rogers</h5>
+                        <p class="card-text"></p><h5><em>“The only person who is educated is the one who has learned how to learn ...and change.”</em></h5><p></p>
+                    </div>
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col-md-4 mt-3">
+                    <img src="/static/image/st.jpg" class="card-img" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">Ralph Waldo Emerson</h5>
+                        <p class="card-text"></p><h5><em>“The secret in education lies in respecting the student.”</em></h5><p></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <div class="container mt-2">
+        <h4>ATTENDANCE PORTAL</h4>
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th scope="col">NAME</th>
+                    <th scope="col">EMAIL</th>
+                    <th scope="col">NUMBER</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Moulya D</td>
+                    <td>moulya@gmail.com</td>
+                    <td>9875563214</td>
+                </tr>
+                <tr>
+                    <td>Payal RamKumar R</td>
+                    <td>payalr28@gmail.com</td>
+                    <td>9902837679</td>
+                </tr>
+                <tr>
+                    <td>Prithivi N</td>
+                    <td>prithivin@gmail.com</td>
+                    <td>9455835688</td>
+                </tr>
+            </tbody>
+        </table>
+        <footer>
+	        <div id="footer-body" class="section">
+                <div class="section-bg-layer">
+                </div>
+	    	    <div class="container">
+	        	    <div id="footer-wrapper" class="container-wrapper">
+					    <div id="el-84613" class="element text-element "> 
+		                    <div class="text-content hasFontScale paragraph3 " data-fontscale="0.9"><div style="text-align: center;">Copyright 2020 <span class="fgColor fg-C1">Website.com</span>. All Rights Reserved.</div>
+                        </div>
+		            </div> 
+		        </div>
+		    </div>	
+	    </footer>
+    </div> 
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
